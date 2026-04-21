@@ -47,7 +47,7 @@ These are not aliased (different CLI syntax from the tools they replace) but are
 
 ```sh
 # 1. Clone this repo
-git clone <repo-url> ~/.config/starship
+git clone https://github.com/larkin1/config.starship.git ~/.config/starship
 
 # 2. Add this line to ~/.zshrc
 source "$HOME/.config/starship/init.zsh"
