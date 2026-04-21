@@ -21,14 +21,25 @@ These must be installed or the prompt won't work:
 | [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) | Syntax coloring | System package (`pacman -S zsh-syntax-highlighting`, `apt install zsh-syntax-highlighting`, etc.) |
 | [Nerd Font](https://www.nerdfonts.com/) | Prompt icons | Install any Nerd Font and set it as your terminal font |
 
-## Recommended
+## Aliased tools
 
-These enhance the experience — aliases fall back gracefully if missing:
+These are aliased to modern replacements. If the tool isn't installed, the alias falls back to the classic command:
+
+| Alias | Modern tool | Falls back to | Install |
+|---|---|---|---|
+| `ls` | [eza](https://github.com/eza-community/eza) `--icons` | `ls --color=auto` | `pacman -S eza` / `apt install eza` |
+| `ll` | `eza -l --icons` | `ls -l --color=auto` | (same) |
+| `la` | `eza -la --icons` | `ls -la --color=auto` | (same) |
+| `lt` | `eza --tree --icons` | `tree` | (same) |
+| `lta` | `eza --tree --icons -a` | — | (same) |
+| `cat` | [bat](https://github.com/sharkdp/bat) `--paging=never` | `cat` | `pacman -S bat` / `apt install bat` |
+
+## Recommended (not aliased)
+
+These are not aliased (different CLI syntax from the tools they replace) but are worth having:
 
 | Tool | Replaces | Install |
 |---|---|---|
-| [eza](https://github.com/eza-community/eza) | `ls` | `pacman -S eza` / `apt install eza` |
-| [bat](https://github.com/sharkdp/bat) | `cat` | `pacman -S bat` / `apt install bat` |
 | [fd](https://github.com/sharkdp/fd) | `find` | `pacman -S fd` / `apt install fd-find` |
 | [ripgrep](https://github.com/BurntSushi/ripgrep) | `grep` | `pacman -S ripgrep` / `apt install ripgrep` |
 
