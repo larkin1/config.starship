@@ -5,6 +5,8 @@ Personal zsh prompt and shell config powered by [Starship](https://starship.rs/)
 ## What's included
 
 - **Starship prompt** — `starship.toml` (catppuccin macchiato palette)
+- **Persistent history** — 10k commands saved to `~/.zsh_history` across sessions
+- **History substring search** — type a prefix, press ↑/↓ to match history (zsh-history-substring-search)
 - **Syntax highlighting** — catppuccin mocha color scheme for zsh-syntax-highlighting
 - **Smart aliases** — uses modern tools when available, falls back to classic commands
 - **Vi mode** — `bindkey -v`
@@ -18,6 +20,7 @@ These must be installed or the prompt won't work:
 | Tool | Purpose | Install |
 |---|---|---|
 | [starship](https://starship.rs/) ≥ 1.0 | Prompt engine | `curl -sS https://starship.rs/install.sh \| sh` |
+| [zsh-history-substring-search](https://github.com/zsh-users/zsh-history-substring-search) | History search on ↑/↓ | System package (`pacman -S zsh-history-substring-search`, `apt install zsh-history-substring-search`, etc.) |
 | [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) | Syntax coloring | System package (`pacman -S zsh-syntax-highlighting`, `apt install zsh-syntax-highlighting`, etc.) |
 | [Nerd Font](https://www.nerdfonts.com/) | Prompt icons | Install any Nerd Font and set it as your terminal font |
 

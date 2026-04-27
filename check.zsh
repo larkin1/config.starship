@@ -28,14 +28,24 @@ typeset -a _starship_missing_opts _starship_missing_descs _starship_missing_inst
 _starship_check_require "starship" "prompt engine" "https://starship.rs/"
 _starship_check_require "zsh" "shell" "https://www.zsh.org/"
 
-if [[ ! -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
-    if [[ -z "$_starship_missing_req" ]]; then
-        _starship_missing_req=1
-        echo -e "\033[1;31mstarship config: missing required dependencies:\033[0m"
+for _starship_plugin in \
+    "zsh-history-substring-search|history substring search|https://github.com/zsh-users/zsh-history-substring-search" \
+    "zsh-syntax-highlighting|syntax coloring|https://github.com/zsh-users/zsh-syntax-highlighting"; do
+    _starship_plugin_name="${_starship_plugin%%|*}"
+    _starship_plugin_rest="${_starship_plugin#*|}"
+    _starship_plugin_desc="${_starship_plugin_rest%%|*}"
+    _starship_plugin_url="${_starship_plugin_rest#*|}"
+    if [[ ! -f /usr/share/zsh/plugins/${_starship_plugin_name}/${_starship_plugin_name}.zsh ]]; then
+        if [[ -z "$_starship_missing_req" ]]; then
+            _starship_missing_req=1
+            echo -e "\033[1;31mstarship config: missing required dependencies:\033[0m"
+        fi
+        echo -e "  \033[31m✗\033[0m ${_starship_plugin_name} — ${_starship_plugin_desc}"
+        echo "    Install: ${_starship_plugin_url}"
     fi
-    echo -e "  \033[31m✗\033[0m zsh-syntax-highlighting — syntax coloring"
-    echo "    Install: https://github.com/zsh-users/zsh-syntax-highlighting"
-fi
+    unset _starship_plugin_name _starship_plugin_rest _starship_plugin_desc _starship_plugin_url
+done
+unset _starship_plugin
 
 _starship_check_optional "eza" "modern ls replacement" "https://github.com/eza-community/eza"
 _starship_check_optional "bat" "modern cat replacement" "https://github.com/sharkdp/bat"
