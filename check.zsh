@@ -49,6 +49,7 @@ unset _starship_plugin
 
 _starship_check_optional "eza" "modern ls replacement" "https://github.com/eza-community/eza"
 _starship_check_optional "bat" "modern cat replacement" "https://github.com/sharkdp/bat"
+_starship_check_optional "zoxide" "smarter cd command" "https://github.com/ajeetdsouza/zoxide"
 _starship_check_optional "fd" "modern find replacement" "https://github.com/sharkdp/fd"
 _starship_check_optional "rg" "modern grep replacement (ripgrep)" "https://github.com/BurntSushi/ripgrep"
 

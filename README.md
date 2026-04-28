@@ -9,6 +9,7 @@ Personal zsh prompt and shell config powered by [Starship](https://starship.rs/)
 - **History substring search** — type a prefix, press ↑/↓ to match history (zsh-history-substring-search)
 - **Syntax highlighting** — catppuccin mocha color scheme for zsh-syntax-highlighting
 - **Smart aliases** — uses modern tools when available, falls back to classic commands
+- **Zoxide** — smarter `cd` with fuzzy matching (`cdi` for interactive mode)
 - **Vi mode** — `bindkey -v`
 - **Tab completion** — zsh built-in compinit with menu select
 - **Dependency checker** — warns about missing tools on startup
@@ -36,6 +37,7 @@ These are aliased to modern replacements. If the tool isn't installed, the alias
 | `lt` | `eza --tree --icons` | `tree` | (same) |
 | `lta` | `eza --tree --icons -a` | — | (same) |
 | `cat` | [bat](https://github.com/sharkdp/bat) `--paging=never` | `cat` | `pacman -S bat` / `apt install bat` |
+| `cd` | [zoxide](https://github.com/ajeetdsouza/zoxide) (`cdi` for interactive) | `cd` | `pacman -S zoxide` / `apt install zoxide` |
 
 ## Recommended (not aliased)
 

@@ -24,4 +24,5 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 export EDITOR=nvim
 export VISUAL=nvim
 export STARSHIP_CONFIG="${0:A:h}/starship.toml"
+eval "$(zoxide init zsh --cmd cd)"
 eval "$(starship init zsh)"
